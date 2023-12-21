@@ -1,7 +1,11 @@
+import './App.css';
+import Cards from './components/Cards';
 function App() {
   return (
-    <h1>Testing</h1>
-  )
+    <main className="app">
+      <Cards />
+    </main>
+  );
 }
 
-export default App
+export default App;

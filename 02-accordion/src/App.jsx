@@ -12,6 +12,7 @@ const faqs = [
     text: 'Excepturi velit laborum, perspiciatis nemo perferendis reiciendis aliquam possimus dolor sed! Dolore laborum ducimus veritatis facere molestias!',
   },
 ];
+import Accordion from './Accordion';
 
 function App() {
   return (
@@ -19,10 +20,6 @@ function App() {
       <Accordion />
     </div>
   );
-}
-
-function Accordion() {
-  return <div>TODO</div>;
 }
 
 export default App;

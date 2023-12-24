@@ -34,18 +34,25 @@ body {
 }
 
 .item {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 0px 5px #fff;
   padding: 20px 24px;
   padding-right: 48px;
   cursor: pointer;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 24px;
   row-gap: 32px;
   align-items: center;
+  border-radius: 5px;
+  transition: all 0.1s ease-in;
+}
+.item:hover {
+  box-shadow: 0px 0px 10px #38b782;
+  border-top: 4px solid #38b782;
+  border-bottom: 4px solid #38b782;
 }
 
 .number {

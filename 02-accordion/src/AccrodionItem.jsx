@@ -1,10 +1,16 @@
-function AccrodionItem() {
+function AccrodionItem({ faq, onToggleAccordion }) {
+  const { id, title, text, isOpen } = faq;
+
+  function handleClick() {
+    onToggleAccordion(id);
+  }
+
   return (
-    <div className="item">
-      <p className="number">0</p>
-      <p className="title">Where are these chairs assembled?</p>
-      <p className="icon">+</p>
-      <div className="content-box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus</div>
+    <div onClick={handleClick} className={`item ${isOpen ? 'open' : ''}`}>
+      <p className="number">0{id}</p>
+      <p className="title">{title}</p>
+      <p className="icon">{isOpen ? '-' : '+'}</p>
+      {isOpen && <div className="content-box">{text}</div>}
     </div>
   );
 }

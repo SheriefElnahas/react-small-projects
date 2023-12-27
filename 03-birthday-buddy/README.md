@@ -1,8 +1,32 @@
-# React + Vite
+# React Birthday Buddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You won't forget your friends' birthday again!
 
-Currently, two official plugins are available:
+## Screenshot Of The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![birthday-buddy-screenshot](https://github.com/SheriefElnahas/react-small-projects/assets/47671429/cbcfe5da-0da1-4042-a88e-d77687d21219)
+
+## Website URL
+
+You can check the live website at this URL [Birthday Buddy](https://sherief-elnahas-react-birthday-buddy.netlify.app/)
+
+## This project helped me to learn and pratice the following :
+
+- Using useState Hook
+- Render list in React
+
+## 🛠 Technologies used
+
+HTML , CSS , React
+
+## Credits
+
+- Project inspiration goes to John Smilga
+
+## Feedback
+
+If you have any feedback, please reach out to me at sheriefelnahas5@gmail.com
+
+## Authors
+
+- [@sheriefelnahas](https://github.com/SheriefElnahas)

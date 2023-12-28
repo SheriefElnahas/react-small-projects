@@ -1,5 +1,6 @@
 import Header from './Header';
 import InvestmentForm from './InvestmentForm';
+import Output from './Output';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <InvestmentForm />
+        <Output />
       </main>
     </>
   );

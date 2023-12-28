@@ -1,4 +1,8 @@
-function Friend({ name, image, balance }) {
+function Friend({ friend, onSelectFriend, selectedFriend }) {
+  const isSelected = selectedFriend?.id === friend?.id;
+
+  const { name, image, balance } = friend;
+
   let balanceDetails;
   let className;
 
@@ -12,12 +16,18 @@ function Friend({ name, image, balance }) {
     balanceDetails = `You and ${name} are even`;
   }
 
+  function handleClick() {
+    onSelectFriend(friend);
+  }
+
   return (
-    <li>
-      <img src={image} alt="" />
+    <li className={isSelected ? 'selected' : ''}>
+      <img src={image} alt={name} />
       <h3>{name}</h3>
       <p className={className}>{balanceDetails}</p>
-      <button className="button">Select</button>
+      <button onClick={handleClick} className="button">
+        {isSelected ? 'Close' : 'Select'}
+      </button>
     </li>
   );
 }

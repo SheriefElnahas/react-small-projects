@@ -135,6 +135,9 @@ form {
   margin-bottom: 1.6rem;
   padding: 1.2rem;
 }
+.form-add-friend label {
+  font-size: 1.4rem;
+}
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
   padding: 3.2rem 4rem;
@@ -146,8 +149,8 @@ label {
 
 label::first-letter {
   display: inline-block;
-  margin-right: 4px;
-  font-size: 1.8rem;
+  margin-right: 2px;
+  font-size: 1.5rem;
 }
 
 input,

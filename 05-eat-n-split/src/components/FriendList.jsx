@@ -1,11 +1,11 @@
-import { initialFriends } from '../data';
+// import { initialFriends } from '../data';
 import Friend from './Friend';
 
-function FriendList() {
+function FriendList({ friendsList }) {
   return (
     <section className="sidebar">
       <ul>
-        {initialFriends.map((friend) => (
+        {friendsList.map((friend) => (
           <Friend key={friend.id} {...friend} />
         ))}
       </ul>

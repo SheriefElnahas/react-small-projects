@@ -6,7 +6,7 @@ function Friend({ name, image, balance }) {
   } else if (balance > 0) {
     balanceDetails = `${name} owes you ${balance}$ `;
   } else {
-    balanceDetails = `You and ${name} are event`;
+    balanceDetails = `You and ${name} are even`;
   }
 
   return (

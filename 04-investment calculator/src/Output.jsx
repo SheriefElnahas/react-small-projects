@@ -4,8 +4,6 @@ function Output({ formData }) {
   const annualData = calculateInvestmentResults(formData);
   const firstYearInvest = annualData[0].valueEndOfYear - annualData[0].interest - annualData[0].annualInvestment;
 
-  console.log(annualData);
-
   return (
     <table id="result">
       <thead>
@@ -27,19 +25,11 @@ function Output({ formData }) {
               <td>{yearRow.year}</td>
               <td>{formatter.format(yearRow.valueEndOfYear)}</td>
               <td>{formatter.format(yearRow.interest)}</td>
-
               <td>{formatter.format(totalInterest)}</td>
               <td>{formatter.format(investedCapital)}</td>
             </tr>
           );
         })}
-        {/* <tr>
-          <td>0</td>
-          <td>$1000</td>
-          <td>$1000</td>
-          <td>$1000</td>
-          <td>$1000</td>
-        </tr> */}
       </tbody>
     </table>
   );

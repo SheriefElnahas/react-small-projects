@@ -1,7 +1,11 @@
+import FriendList from './components/FriendList';
+
 function App() {
   return (
-    <h1>Testing</h1>
-  )
+    <main className="app">
+      <FriendList />
+    </main>
+  );
 }
 
-export default App
+export default App;

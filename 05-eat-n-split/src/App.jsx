@@ -1,5 +1,6 @@
 import AddFriend from './components/AddFriend';
 import FriendList from './components/FriendList';
+import SplitBillForm from './components/SplitBillForm';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <section className="sidebar">
         <FriendList />
         <AddFriend />
+      </section>
+      <section>
+        <SplitBillForm />
       </section>
     </main>
   );

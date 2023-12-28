@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
 function AddFriend({ onAddFriend }) {
-  const randomNumber = Math.floor(Math.random() * 2000);
-
   const [formData, setFormData] = useState({ friendName: '', imageURL: `https://i.pravatar.cc/48?u=` });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,6 +23,8 @@ function AddFriend({ onAddFriend }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const randomNumber = Math.floor(Math.random() * 2000);
 
     const newFriend = {
       id: randomNumber,

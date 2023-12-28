@@ -114,10 +114,14 @@ body {
 
 .green {
   color: #66a80f;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .red {
   color: #e03131;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 form {

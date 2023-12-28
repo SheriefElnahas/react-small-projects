@@ -1,9 +1,13 @@
+import AddFriend from './components/AddFriend';
 import FriendList from './components/FriendList';
 
 function App() {
   return (
     <main className="app">
-      <FriendList />
+      <section className="sidebar">
+        <FriendList />
+        <AddFriend />
+      </section>
     </main>
   );
 }

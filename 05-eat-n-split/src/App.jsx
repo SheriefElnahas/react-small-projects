@@ -17,13 +17,29 @@ function App() {
     setSelectedFriend((selectedFriend) => (selectedFriend && selectedFriend.id === friend.id ? null : friend));
   }
 
+  function HandleSplitBill(billValue) {
+    console.log(billValue);
+
+    setFriendsList((friends) => {
+      return friends.map((friend) => {
+        if (friend.id === selectedFriend.id) {
+          return { ...friend, balance: friend.balance + billValue };
+        } else {
+          return friend;
+        }
+      });
+    });
+
+    setSelectedFriend(null);
+  }
+
   return (
     <main className="app">
       <section className="sidebar">
         <FriendList friendsList={friendsList} onSelectFriend={handleSelectFriend} selectedFriend={selectedFriend} />
         <AddFriend onAddFriend={handleAddFriend} />
       </section>
-      <section>{selectedFriend && <SplitBillForm selectedFriend={selectedFriend} />}</section>
+      <section>{selectedFriend && <SplitBillForm selectedFriend={selectedFriend} onHandleSplitBill={HandleSplitBill} />}</section>
     </main>
   );
 }

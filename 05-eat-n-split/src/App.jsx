@@ -18,8 +18,6 @@ function App() {
   }
 
   function HandleSplitBill(billValue) {
-    console.log(billValue);
-
     setFriendsList((friends) => {
       return friends.map((friend) => {
         if (friend.id === selectedFriend.id) {

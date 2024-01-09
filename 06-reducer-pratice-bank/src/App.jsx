@@ -3,6 +3,8 @@ import { useReducer } from 'react';
 const OPEN_ACCOUNT = 'open_account';
 const DEPOSIT = 'deposit';
 const WITHDRAW = 'withdraw';
+const REQUEST_LOAN = 'request_loan';
+const PAY_LOAN = 'pay_loan';
 
 const initialState = {
   balance: 0,
@@ -30,7 +32,19 @@ function reducer(state, action) {
       return {
         ...state,
         status: 'withdraw',
-        balance: state.balance > 0 ? state.balance - 50 : 0,
+        balance: state.balance > 150 ? state.balance - 150 : 0,
+      };
+    case REQUEST_LOAN:
+      return {
+        ...state,
+        loan: 5000,
+        balance: state.loan === 0 ? state.balance + 5000 : state.balance,
+      };
+    case PAY_LOAN:
+      return {
+        ...state,
+        balance: state.loan !== 0 ? state.balance - 5000 : state.balance,
+        loan: 0,
       };
     default:
       throw new Error('action type was not expected');
@@ -56,10 +70,14 @@ function App() {
           Deposit 150
         </button>
         <button onClick={() => dispatch({ type: WITHDRAW })} disabled={status === 'closed'}>
-          Withdraw 50
+          Withdraw 150
         </button>
-        <button disabled={status === 'closed'}>Request a loan of 5000</button>
-        <button disabled={status === 'closed'}>Pay Loan</button>
+        <button onClick={() => dispatch({ type: REQUEST_LOAN })} disabled={status === 'closed' || loan > 0}>
+          Request a loan of 5000
+        </button>
+        <button onClick={() => dispatch({ type: PAY_LOAN })} disabled={status === 'closed' || balance < 5000}>
+          Pay Loan
+        </button>
         <button disabled={status === 'closed'}>Close Account</button>
       </div>
     </main>

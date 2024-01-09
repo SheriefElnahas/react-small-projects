@@ -50,7 +50,7 @@ function reducer(state, action) {
     case CLOSE_ACCOUNT:
       return {
         ...state,
-        status: 'closed'
+        status: 'closed',
       };
     default:
       throw new Error('action type was not expected');
@@ -65,8 +65,14 @@ function App() {
   return (
     <main>
       <h1>useReducer Bank Account</h1>
-      <p>Balance : {balance}</p>
-      <p>Loan : {loan}</p>
+      <div className="info">
+        <p>
+          Balance : {balance} {balance > 0 ? '$' : ''}{' '}
+        </p>
+        <p>
+          Loan : {loan} {loan === 0 ? '' : '$'}
+        </p>
+      </div>
 
       <div className="buttons">
         <button onClick={() => dispatch({ type: OPEN_ACCOUNT })} disabled={status !== 'closed'}>
@@ -84,7 +90,9 @@ function App() {
         <button onClick={() => dispatch({ type: PAY_LOAN })} disabled={status === 'closed' || balance < 5000}>
           Pay Loan
         </button>
-        <button onClick={() => dispatch({type: CLOSE_ACCOUNT})} disabled={status === 'closed' || balance !== 0 || loan !== 0}>Close Account</button>
+        <button onClick={() => dispatch({ type: CLOSE_ACCOUNT })} disabled={status === 'closed' || balance !== 0 || loan !== 0}>
+          Close Account
+        </button>
       </div>
     </main>
   );

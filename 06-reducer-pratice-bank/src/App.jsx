@@ -1,4 +1,5 @@
 import { useReducer } from 'react';
+import { produce } from 'immer';
 
 const OPEN_ACCOUNT = 'open_account';
 const DEPOSIT = 'deposit';
@@ -18,47 +19,35 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case OPEN_ACCOUNT:
-      return {
-        ...state,
-        status: 'open',
-        balance: 500,
-      };
+      state.status = 'open';
+      state.balance = 500;
+      break;
     case DEPOSIT:
-      return {
-        ...state,
-        status: 'deposit',
-        balance: state.balance + 150,
-      };
+      state.status = 'deposit';
+      state.balance = state.balance + 150;
+      break;
     case WITHDRAW:
-      return {
-        ...state,
-        status: 'withdraw',
-        balance: state.balance > 150 ? state.balance - 150 : 0,
-      };
+      state.status = 'withdraw';
+      state.balance = state.balance > 150 ? state.balance - 150 : 0;
+      break;
     case REQUEST_LOAN:
-      return {
-        ...state,
-        loan: 5000,
-        balance: state.loan === 0 ? state.balance + 5000 : state.balance,
-      };
+      state.loan = 5000;
+      state.balance = state.loan === 0 ? state.balance + 5000 : state.balance;
+      break;
     case PAY_LOAN:
-      return {
-        ...state,
-        balance: state.loan !== 0 ? state.balance - 5000 : state.balance,
-        loan: 0,
-      };
+      state.balance = state.loan !== 0 ? state.balance - 5000 : state.balance;
+      state.loan = 0;
+      break;
     case CLOSE_ACCOUNT:
-      return {
-        ...state,
-        status: 'closed',
-      };
+      state.status = 'closed';
+      break;
     default:
       throw new Error('action type was not expected');
   }
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = produce(useReducer(reducer, initialState));
 
   const { balance, loan, status } = state;
 

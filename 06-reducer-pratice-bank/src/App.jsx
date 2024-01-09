@@ -5,6 +5,7 @@ const DEPOSIT = 'deposit';
 const WITHDRAW = 'withdraw';
 const REQUEST_LOAN = 'request_loan';
 const PAY_LOAN = 'pay_loan';
+const CLOSE_ACCOUNT = 'close_account';
 
 const initialState = {
   balance: 0,
@@ -46,6 +47,11 @@ function reducer(state, action) {
         balance: state.loan !== 0 ? state.balance - 5000 : state.balance,
         loan: 0,
       };
+    case CLOSE_ACCOUNT:
+      return {
+        ...state,
+        status: 'closed'
+      };
     default:
       throw new Error('action type was not expected');
   }
@@ -78,7 +84,7 @@ function App() {
         <button onClick={() => dispatch({ type: PAY_LOAN })} disabled={status === 'closed' || balance < 5000}>
           Pay Loan
         </button>
-        <button disabled={status === 'closed'}>Close Account</button>
+        <button onClick={() => dispatch({type: CLOSE_ACCOUNT})} disabled={status === 'closed' || balance !== 0 || loan !== 0}>Close Account</button>
       </div>
     </main>
   );

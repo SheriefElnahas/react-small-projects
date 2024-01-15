@@ -64,3 +64,8 @@ a {
   display:inline-block;
   text-decoration: none;
 }
+
+button, 
+input {
+  font-family: inherit;
+}

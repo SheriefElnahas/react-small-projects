@@ -1,9 +1,10 @@
 import './Signup.css';
+import Button from '../UI/Button';
 
 function Signup() {
   return (
     <div className="signup">
-      <h2 className='signup__heading'>Signup</h2>
+      <h2 className="signup__heading">Signup</h2>
       <form className="signup__form">
         <div className="form__control">
           <label className="form__label" htmlFor="email">
@@ -17,7 +18,8 @@ function Signup() {
           </label>
           <input className="form__input" type="password" id="password" name="password" />
         </div>
-        <button className='button'>Signup</button>
+
+        <Button>Signup</Button>
       </form>
     </div>
   );

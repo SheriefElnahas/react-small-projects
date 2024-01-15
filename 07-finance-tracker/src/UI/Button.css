@@ -1,0 +1,18 @@
+.button {
+  background: transparent;
+  padding: 0.5rem 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  transition: 0.2s all ease;
+}
+.button:hover {
+  background: #242424;
+  color: #fff;
+}
+
+.button:active {
+  transform: translateY(1px);
+  background: teal;
+}

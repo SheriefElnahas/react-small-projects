@@ -1,0 +1,35 @@
+.nav {
+  background: #242424;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #1bffa2;
+}
+
+.nav__list {
+  display: flex;
+}
+.nav__item {
+  margin-right: 2rem;
+  font-weight: bold;
+}
+
+.nav__link {
+  color: #fff;
+  margin-top: 0.7rem;
+}
+
+.nav__link:hover {
+  color:#1bffa2;
+
+}

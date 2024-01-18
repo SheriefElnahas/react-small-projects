@@ -1,29 +1,10 @@
 .form__container {
   display: grid;
   place-content: center;
-  padding-top: 5rem;
+  padding-top: 4rem;
 }
 
 .form__heading {
-  text-align: left;
-
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.form__control {
-  display: flex;
-  flex-direction: column;
-}
-.form__label {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-.form__input {
-  padding: 0.3rem;
-  width: 250px;
   margin-bottom: 1.5rem;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 2rem;
 }

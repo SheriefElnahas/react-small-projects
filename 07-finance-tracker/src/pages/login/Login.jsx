@@ -22,7 +22,7 @@ function Login() {
       <form onSubmit={handleSubmit} className="signup__form">
         <Input type="email" name="email" value={email} setValue={setEmail} />
         <Input type="password" name="password" value={password} setValue={setPassword} />
-        <Button>Signup</Button>
+        <Button>Login</Button>
       </form>
     </div>
   );

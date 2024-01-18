@@ -18,13 +18,12 @@ function Signup() {
   }
 
   return (
-    <div className="signup">
-      <h2 className="signup__heading">Signup</h2>
-      <form onSubmit={handleSubmit} className="signup__form">
+    <div className="form__container">
+      <h2 className="form__heading">Signup</h2>
+      <form onSubmit={handleSubmit} className="form">
         <Input type="text" name="username" value={username} setValue={setUsername} />
         <Input type="email" name="email" value={email} setValue={setEmail} />
         <Input type="password" name="password" value={password} setValue={setPassword} />
-
         <Button>Signup</Button>
       </form>
     </div>

@@ -9,7 +9,7 @@ function Input({ type, name, value, setValue }) {
   return (
     <div className="form__control">
       <label className="form__label" htmlFor={name}>
-        {name[0].toUpperCase() + name.slice(1)}
+        {name[0].toUpperCase() + name.slice(1)}:
       </label>
       <input className="form__input" type={type} name={name} id={name} value={value} onChange={handleChange} />
     </div>

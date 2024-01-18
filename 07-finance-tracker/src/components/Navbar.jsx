@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="nav">
       <div className="container">
         <Link to="/" >
-        <h1 className="nav__logo">myMoney</h1>
+        <h1 className="nav__logo">Finance Tracker</h1>
         </Link>
 
         <ul className="nav__list">

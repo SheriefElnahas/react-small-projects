@@ -27,9 +27,16 @@
 .nav__link {
   color: #fff;
   margin-top: 0.7rem;
+  padding-bottom:0.3rem;
+  border-bottom:3px solid transparent;
 }
 
 .nav__link:hover {
   color:#1bffa2;
+  border-bottom:3px solid #1bffa2;
+}
 
+.active {
+  color:#1bffa2;
+  border-bottom:3px solid #1bffa2;
 }
